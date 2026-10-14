@@ -115,7 +115,7 @@ def check_agent_import():
         
         from weather_agent import root_agent
         print(f"✅ Agent imported successfully: {root_agent.name}")
-        print(f"   Model: {root_agent.model}")
+        print(f"   Model: {getattr(root_agent.model, 'model', root_agent.model)}")
         return True
     except Exception as e:
         print(f"❌ Failed to import agent: {e}")
